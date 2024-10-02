@@ -69,9 +69,12 @@ class TopLangsController extends Controller
             }, $topFiveLanguages);
 
             $data = json_encode($data, JSON_PRETTY_PRINT);
+            $svg = view('stats.top_langs', compact('data', 'colors'))->render();
 
-            return view('stats.top_langs', compact('data', 'colors'));
+            return response($svg)->header('Content-Type', 'image/svg+xml');
+
         } catch (\GuzzleHttp\Exception\RequestException $e) {
+
             return response()->json(['error' => 'User not found or API error.'], 404);
         }
     }

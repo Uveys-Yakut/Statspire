@@ -53,4 +53,45 @@ class GitHubService
 
         return $languages;
     }
+
+    public function getGithubStatsCardInformation($username, $token) {
+        $repos = $this->getRepos($username, $token);
+
+        $totalStars = 0;
+        $totalCommits = 0;
+
+        foreach ($repos as $repo) {
+            $totalStars += $repo['stargazers_count'];
+
+            $commitsResponse = (new Client())->get("https://api.github.com/repos/{$username}/{$repo['name']}/commits", [
+                'headers' => [
+                    'Authorization' => "token {$token}",
+                ],
+            ]);
+            $commits = json_decode($commitsResponse->getBody(), true);
+            $totalCommits += count($commits);
+        }
+
+        $pullRequestsResponse = (new Client())->get("https://api.github.com/search/issues?q=author:{$username}+type:pr", [
+            'headers' => [
+                'Authorization' => "token {$token}",
+            ],
+        ]);
+        $totalPRs = json_decode($pullRequestsResponse->getBody(), true)['total_count'];
+
+        $issuesResponse = (new Client())->get("https://api.github.com/search/issues?q=author:{$username}+type:issue", [
+            'headers' => [
+                'Authorization' => "token {$token}",
+            ],
+        ]);
+        $totalIssues = json_decode($issuesResponse->getBody(), true)['total_count'];
+
+        return [
+            'totalStars' => $totalStars,
+            'totalCommits' => $totalCommits,
+            'totalPRs' => $totalPRs,
+            'totalIssues' => $totalIssues,
+        ];
+    }
+
 }
