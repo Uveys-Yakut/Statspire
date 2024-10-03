@@ -4,17 +4,14 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Services\GitHubService;
-use App\Services\GitHubStatsCardInfos;
+use App\Services\GitHub\GitHubStatsCardInfos;
 
 class StatsCardController extends Controller
 {
-    protected $githubService;
     protected $githubStatsCardInfos;
 
-    public function __construct(GitHubService $githubService, GitHubStatsCardInfos $githubStatsCardInfos)
+    public function __construct(GitHubStatsCardInfos $githubStatsCardInfos)
     {
-        $this->githubService = $githubService;
         $this->githubStatsCardInfos = $githubStatsCardInfos;
     }
 
