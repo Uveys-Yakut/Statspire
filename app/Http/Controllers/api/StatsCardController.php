@@ -107,6 +107,8 @@ class StatsCardController extends Controller
             'dashOffset' => $dashOffset
         ];
 
-        return view('stats.stats_card', compact('data'));
+        $svg = view('stats.stats_card', compact('data'))->render();
+
+        return response($svg)->header('Content-Type', 'image/svg+xml');
     }
 }

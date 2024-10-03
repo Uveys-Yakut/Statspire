@@ -3,9 +3,10 @@ $statsData = $data['statsData'];
 $rank = $data['rank'];
 $startOffset = $data['startOffset'];
 $dashOffset = $data['dashOffset'];
+$cardHeight = (count($data) * 24)+120
 @endphp
 
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="195" viewBox="0 0 450 195" fill="none" role="img" aria-labelledby="descId">
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="{{ $cardHeight }}" viewBox="0 0 450 {{ $cardHeight }}" fill="none" role="img" aria-labelledby="descId">
     <title id="titleId">My GitHub Stats, Rank: $rank</title>
     <desc id="descId">Total Stars Earned: $total_stars, Total Commits in 2024 : $total_commits, Total PRs: $total_prs, Total Issues: $total_issues, Contributed to (last year): $contributions</desc>
     <style>
@@ -81,7 +82,7 @@ $dashOffset = $data['dashOffset'];
             }
         }
     </style>
-    <rect data-testid="card-bg" x="0.5" y="0.5" rx="4.5" height="99%" stroke="#e4e2e2" width="449" fill="#fffefe" stroke-opacity="1"/>
+    <rect data-testid="card-bg" x="0.5" y="0.5" rx="4.5" height="calc(100% - 1px)" stroke="#e4e2e2" width="449" fill="#fffefe" stroke-opacity="1"/>
     <g data-testid="card-title" transform="translate(25, 35)">
         <g transform="translate(0, 0)">
             <text x="0" y="0" class="header" data-testid="header">{{ $data['title'] }} Github Stats</text>
@@ -103,24 +104,36 @@ $dashOffset = $data['dashOffset'];
                 </g>
             </g>
             <g transform="translate(0, 25)">
+                <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
+                    <text class="stat bold" y="12.5">Total Followers:</text>
+                    <text class="stat bold" x="199.01" y="12.5" data-testid="stars">{{ $statsData['totalFollowers'] }}</text>
+                </g>
+            </g>
+            <g transform="translate(0, 50)">
                 <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
                     <text class="stat bold" y="12.5">Total Commits:</text>
                     <text class="stat bold" x="199.01" y="12.5" data-testid="commits">{{ $statsData['totalCommits'] }}</text>
                 </g>
             </g>
-            <g transform="translate(0, 50)">
+            <g transform="translate(0, 75)">
                 <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
                     <text class="stat bold" y="12.5">Total PRs:</text>
                     <text class="stat bold" x="199.01" y="12.5" data-testid="prs">{{ $statsData['totalPRs'] }}</text>
                 </g>
             </g>
-            <g transform="translate(0, 75)">
+            <g transform="translate(0, 100)">
                 <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
                     <text class="stat bold" y="12.5">Total Issues:</text>
                     <text class="stat bold" x="199.01" y="12.5" data-testid="issues">{{ $statsData['totalIssues'] }}</text>
                 </g>
             </g>
-            <g transform="translate(0, 100)">
+            <g transform="translate(0, 125)">
+                <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
+                    <text class="stat bold" y="12.5">Total Forks:</text>
+                    <text class="stat bold" x="199.01" y="12.5" data-testid="issues">{{ $statsData['totalIssues'] }}</text>
+                </g>
+            </g>
+            <g transform="translate(0, 150)">
                 <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
                     <text class="stat bold" y="12.5">Contributed to:</text>
                     <text class="stat bold" x="199.01" y="12.5" data-testid="contribs">{{ $statsData['contributedTo'] }}</text>
