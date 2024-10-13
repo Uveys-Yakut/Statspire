@@ -88,6 +88,8 @@ class StatsCardController extends Controller
         $requsetTheme = $request->query("theme");
         $themes = config("themes.statsCardTheme");
         $additinlStats = $request->query("additinlStats");
+        $actGitLogo = $request->query("actGitLogo");
+        $hideItms = $request->query("hide");
         $token = config('services.github.token');
 
         $statsData = $this->githubStatsCardInfos->fetchStats($username, $token);
@@ -101,6 +103,10 @@ class StatsCardController extends Controller
             $selectedTheme = $themes[$requsetTheme];
         } else {
             $selectedTheme = $themes['default'];
+        }
+
+        if ($hideItms !== "full") {
+            $hideItms = ($hideItms) ? array_unique(json_decode($hideItms, true)) : null;
         }
 
         foreach ($statsData as & $stats) {
@@ -117,7 +123,9 @@ class StatsCardController extends Controller
             'dashOffset' => $dashOffset,
             "showIcons" => ($showIcons) ? $showIcons : "false",
             "theme" => $selectedTheme,
-            "additinlStats" => ($additinlStats) ? $additinlStats : "false"
+            "additinlStats" => ($additinlStats) ? $additinlStats : "false",
+            "active_git_logo" => ($actGitLogo) ? $actGitLogo : "false",
+            "hideItems" => $hideItms
         ];
 
         $svg = view('stats.stats_card', compact('data'))->render();
