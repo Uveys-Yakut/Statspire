@@ -84,6 +84,10 @@ class StatsCardController extends Controller
 
     public function stats_card(Request $request) {
         $username = $request->query("username");
+        $showIcons = $request->query("show_icons");
+        $requsetTheme = $request->query("theme");
+        $themes = config("themes.statsCardTheme");
+        $additinlStats = $request->query("additinlStats");
         $token = config('services.github.token');
 
         $statsData = $this->githubStatsCardInfos->fetchStats($username, $token);
@@ -92,6 +96,12 @@ class StatsCardController extends Controller
         $rank = $rankData['rank'];
         $dashOffset = $rankData['dashoffset'];
         $startOffset = $rankData['startOffset'];
+
+        if (in_array($requsetTheme, $themes['themeList'])) {
+            $selectedTheme = $themes[$requsetTheme];
+        } else {
+            $selectedTheme = $themes['default'];
+        }
 
         foreach ($statsData as & $stats) {
             if (is_numeric($stats)) {
@@ -104,7 +114,10 @@ class StatsCardController extends Controller
             'statsData' => $statsData,
             'rank' => $rank,
             'startOffset' => $startOffset,
-            'dashOffset' => $dashOffset
+            'dashOffset' => $dashOffset,
+            "showIcons" => ($showIcons) ? $showIcons : "false",
+            "theme" => $selectedTheme,
+            "additinlStats" => ($additinlStats) ? $additinlStats : "false"
         ];
 
         $svg = view('stats.stats_card', compact('data'))->render();
