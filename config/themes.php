@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'statsCardTheme' => [
+    'statsTheme' => [
         'default' => [
             'header_ttl_color' => '#2f80ed',
             'circle_color' => '#2f80ed',

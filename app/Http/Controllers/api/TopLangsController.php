@@ -23,6 +23,8 @@ class TopLangsController extends Controller
     {
         $username = $request->query("username");
         $chartType = $request->query("chart_type");
+        $requsetTheme = $request->query("theme");
+        $themes = config("themes.statsTheme");
         $token = config('services.github.token');
         $langsColor = json_decode(File::get(resource_path('data/variables/languageColors.json')), true);
 
@@ -72,6 +74,12 @@ class TopLangsController extends Controller
                 return number_format($lang['percentage'], 2);
             }, $topFiveLanguages);
 
+            if (in_array($requsetTheme, $themes['themeList'])) {
+                $selectedTheme = $themes[$requsetTheme];
+            } else {
+                $selectedTheme = $themes['default'];
+            }
+
             $langsDt = json_encode($langsDt, JSON_PRETTY_PRINT);
             $chartTypesList = ["pie", "pie_v", "donut", "donut_v", "compress", "hide"];
             $circleChartTypes = ["pie", "pie_v", "donut", "donut_v"];
@@ -80,7 +88,8 @@ class TopLangsController extends Controller
                 'langs_color' => $langsColor,
                 'chart_type' => $chartType,
                 'chart_type_list' => $chartTypesList,
-                'circle_chart_types' => $circleChartTypes
+                'circle_chart_types' => $circleChartTypes,
+                'theme' => $selectedTheme,
             ];
             $svg = view('stats.top_langs', compact('data'))->render();
 

@@ -11,6 +11,7 @@
     $chartType = $data['chart_type'];
     $chartTypLst = $data['chart_type_list'];
     $circleChrtTyps = $data['circle_chart_types'];
+    $theme = $data['theme'];
 
     $margin = 40;
     $numBars = $langsDtCount;
@@ -61,22 +62,33 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" width="{{ $svgWidth }}" height="{{ $svgHeight }}" viewBox="0 0 {{ $svgWidth }} {{ $svgHeight }}">
     <style>
+        :root {
+            --header-ttl-color: {{ $theme['header_ttl_color'] }};
+            --card-stroke-color: {{ $theme['card_stroke_color'] }};
+            --card-fill-color: {{ $theme['card_fill_color'] }};
+            --text-color: {{ (in_array($theme['text_color'], ["#81979ce8", "#9f9f9f"])) ? "#d1d6d7" : $theme['text_color']}};
+        }
         .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
-            fill: #2f80ed;
+            fill: var(--header-ttl-color);
         }
         .lang-name {
             font: 400 11px "Segoe UI", Ubuntu, Sans-Serif;
-            fill: #434d58;
+            fill: var(--text-color);
         }
         .bar {
             rx: 5;
             ry: 5;
         }
+        .stats-background {
+            stroke: var(--card-stroke-color);
+            fill: var(--card-fill-color);
+        }
         .background-bar {
-            fill: #ddd;
+            fill: var(--text-color);
             rx: 5;
             ry: 5;
+            opacity: 0.15;
         }
         @keyframes fadeInAnimation {
             from {
@@ -91,7 +103,7 @@
             animation: fadeInAnimation 0.3s ease-in-out forwards;
         }
     </style>
-    <rect x="0.5" y="0.5" rx="4.5" height="99%" stroke="#e4e2e2" width="{{ $svgWidth - 1 }}" fill="#fffefe" />
+    <rect x="0.5" y="0.5" rx="4.5" class="stats-background" height="99%" width="{{ $svgWidth - 1 }}" />
 
     <text x="25" y="35" class="header" opacity="0">
         Most Used Languages

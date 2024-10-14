@@ -86,7 +86,7 @@ class StatsCardController extends Controller
         $username = $request->query("username");
         $showIcons = $request->query("show_icons");
         $requsetTheme = $request->query("theme");
-        $themes = config("themes.statsCardTheme");
+        $themes = config("themes.statsTheme");
         $additinlStats = $request->query("additinlStats");
         $actGitLogo = $request->query("actGitLogo");
         $hideItms = $request->query("hide");
