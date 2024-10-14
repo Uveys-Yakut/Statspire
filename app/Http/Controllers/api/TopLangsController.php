@@ -22,8 +22,9 @@ class TopLangsController extends Controller
     public function top_langs(Request $request)
     {
         $username = $request->query("username");
+        $chartType = $request->query("chart_type");
         $token = config('services.github.token');
-        $colors = json_decode(File::get(resource_path('data/variables/languageColors.json')), true);
+        $langsColor = json_decode(File::get(resource_path('data/variables/languageColors.json')), true);
 
         try {
             $repos = $this->githubTopLangsStats->getRepos($username, $token);
@@ -67,12 +68,21 @@ class TopLangsController extends Controller
                 }
             }
 
-            $data = array_map(function ($lang) {
+            $langsDt = array_map(function ($lang) {
                 return number_format($lang['percentage'], 2);
             }, $topFiveLanguages);
 
-            $data = json_encode($data, JSON_PRETTY_PRINT);
-            $svg = view('stats.top_langs', compact('data', 'colors'))->render();
+            $langsDt = json_encode($langsDt, JSON_PRETTY_PRINT);
+            $chartTypesList = ["pie", "pie_v", "donut", "donut_v", "compress", "hide"];
+            $circleChartTypes = ["pie", "pie_v", "donut", "donut_v"];
+            $data = [
+                'langs_data' => $langsDt,
+                'langs_color' => $langsColor,
+                'chart_type' => $chartType,
+                'chart_type_list' => $chartTypesList,
+                'circle_chart_types' => $circleChartTypes
+            ];
+            $svg = view('stats.top_langs', compact('data'))->render();
 
             return response($svg)->header('Content-Type', 'image/svg+xml');
 
