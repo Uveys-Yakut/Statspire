@@ -33,19 +33,19 @@
         * {
             box-sizing: border-box;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: normal;
+        }
         html,
         body {
             width: 100%;
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            margin: 0;
+            padding: 0;
             overflow: hidden;
-            color: var(--text-color);
-            background-color: var(--background-color);
         }
-
     </style>
     <body>
         <div class="mn_wrpr">

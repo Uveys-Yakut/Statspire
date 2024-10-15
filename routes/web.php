@@ -6,7 +6,11 @@ use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('/docs');
+});
+
+Route::get('/docs', function () {
+    return view('docs.index');
 });
 
 Route::prefix('api')->group(function() {
