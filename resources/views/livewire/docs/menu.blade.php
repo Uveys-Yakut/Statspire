@@ -1,116 +1,22 @@
 @php
+    use Illuminate\Support\Str;
+
     $menuDt = $data['menuData'];
+    $activeMenuSlung = $data['activeMenuSlung'];
 @endphp
-<style>
-    .doc-sdbr_wrpr {
-        height: 100%;
-        display: block;
-        border-right: 1px solid;
-        border-color: #dadde1;
-        transition: border-color .5ms ease;
-    }
-    .sdbr_wrpr {
-        width: 300px;
-        height: 100%;
-        max-height: 100vh;
-        display: flex;
-        flex-direction: columnu;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        transition: opacity 50ms;
-        overflow-y: auto;
-    }
-    .sdbr_wrpr::-webkit-scrollbar {
-        width: 10px;
-    }
-    .sdbr_wrpr::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-    .sdbr_wrpr::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 10px;
-        border: 2px solid #f1f1f1;
-    }
-    .sdbr_wrpr::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-    .sdbr_wrpr::-webkit-scrollbar-button {
-        background: #f1f1f1;
-        height: 2px;
-    }
-    .menu {
-        width: 100%;
-        padding: .5rem;
-        color: #606770;
-    }
-    .mnu_lst_wrpr {
-        list-style: none;
-        margin: 0;
-        padding-left: 0;
-        border-radius: .5rem;
-    }
-    .mnu_lst-itm_wrpr {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-top: .25rem;
-        cursor: pointer;
-    }
-    .lst-itm.collapsible {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        padding: .375rem 1rem;
-        border-radius: .5rem;
-    }
-    .lst-itm.collapsible:hover {
-        background-color: #3d3d3d0d;
-    }
-    .lst-itm.collapsible[lnk-act] >
-    span {
-        color: #007fef;
-    }
-    .lst-itm.collapsible[act] >
-    svg {
-        transform: rotate(180deg) !important;
-    }
-    .sublst-ttl {
-        font-size: 1.1rem;
-        font-family: KanitRegular;
-        line-height: 1.25;
-    }
-    .cllpsbl-icn {
-        width: 2rem;
-        position: absolute;
-        right: .375rem;
-        transform: rotate(90deg);
-        fill: #606770;
-        transition: transform .5s ease;
-    }
-    .lst-itm.cntnt_wrpr {
-        width: 100%;
-        height: 0px;
-        overflow: hidden;
-        will-change: height;
-        transition: height 284ms ease-in-out;
-    }
-    .lst-itm.cntnt_wrpr >
-    .mnu_lst-itm_wrpr >
-    .lst-itm.collapsible[lnk-act] {
-        background-color: #3d3d3d0d;
-    }
-</style>
 <div class="doc-sdbr_wrpr">
     <div class="sdbr_wrpr">
         <nav class="menu">
             <ul class="mnu_lst_wrpr">
                 @foreach ($menuDt->menu as $menuItm)
                     <li class="mnu_lst-itm_wrpr">
-                        <div class="lst-itm lv1 collapsible">
+                        <div class="lst-itm lv1 collapsible"
+                            @foreach ($menuItm->subItems as $subItm)
+                                @if (Str::slug($subItm->title) === $activeMenuSlung)
+                                    lnk-act
+                                @endif
+                            @endforeach
+                        >
                             <span class="sublst-ttl">{{ $menuItm->title }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="cllpsbl-icn" viewBox="0 0 24 24">
                                 <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
@@ -119,9 +25,16 @@
                         <ul class="lst-itm cntnt_wrpr">
                             @foreach ($menuItm->subItems as $subItm)
                                 <li class="mnu_lst-itm_wrpr">
-                                    <div class="lst-itm lv2 collapsible">
+                                    <a
+                                        class="lst-itm lv2 collapsible"
+                                        wire:click.prevent="activeMnu('{{ Str::slug($subItm->title) }}')"
+                                        href="{{ Str::slug($subItm->title) }}"
+                                        @if (Str::slug($subItm->title) === $activeMenuSlung)
+                                            lnk-act
+                                        @endif
+                                    >
                                         <span class="sublst-ttl">{{ $subItm->title }}</span>
-                                    </div>
+                                     </a>
                                 </li>
                             @endforeach
                         </ul>

@@ -3,7 +3,6 @@
 namespace App\Livewire\Docs;
 
 use Livewire\Component;
-use Livewire\Attributes\Layout;
 
 class Header extends Component
 {

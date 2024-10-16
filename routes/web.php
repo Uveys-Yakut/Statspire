@@ -9,7 +9,7 @@ Route::get('/', function () {
     return redirect('/docs');
 });
 
-Route::get('/docs', DocsIndex::class);
+Route::get('/docs/{slug}', DocsIndex::class);
 
 Route::prefix('api')->group(function() {
     Route::prefix('v1')->group(function() {
