@@ -2,16 +2,14 @@
 
 use App\Http\Controllers\api\StatsCardController;
 use App\Http\Controllers\api\TopLangsController;
-use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Docs\Index as DocsIndex;
 
 Route::get('/', function () {
     return redirect('/docs');
 });
 
-Route::get('/docs', function () {
-    return view('docs.index');
-});
+Route::get('/docs', DocsIndex::class);
 
 Route::prefix('api')->group(function() {
     Route::prefix('v1')->group(function() {

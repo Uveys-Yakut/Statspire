@@ -1,0 +1,152 @@
+{
+    "menu": [
+      {
+        "id" : 1,
+        "title": "Introduction",
+        "subItems": [
+            {
+                "id" : 1,
+                "title": "What is Statspire stats"
+            },
+            {
+                "id" : 2,
+                "title": "Key Features"
+            },
+            {
+                "id" : 3,
+                "title": "Benefits of Using the App"
+            }
+        ]
+      },
+      {
+        "id" : 2,
+        "title": "Installation",
+        "subItems": [
+            {
+                "id" : 1,
+                "title": "Requirements"
+            },
+            {
+                "id" : 2,
+                "title": "Installing via Composer"
+            },
+            {
+                "id" : 3,
+                "title": "Running the Application"
+            }
+        ]
+      },
+      {
+        "id" : 3,
+        "title": "Usage",
+        "subItems": [
+            {
+                "id" : 1,
+                "title": "Basic Usage"
+            },
+            {
+                "id" : 2,
+                "title": "Generating Specific Stats"
+            },
+            {
+                "id" : 3,
+                "title": "Displaying Multiple Stats"
+            }
+        ]
+      },
+      {
+        "id" : 4,
+        "title": "Available Stats",
+        "subItems": [
+            {
+                "id" : 1,
+                "title": "Contribution Stats"
+            },
+            {
+                "id" : 2,
+                "title": "Top Languages Stats"
+            },
+            {
+                "id" : 3,
+                "title": "Repo Stats"
+            },
+            {
+                "id" : 4,
+                "title": "Custom Stats"
+            }
+        ]
+      },
+      {
+        "id" : 5,
+        "title": "API Documentation",
+        "subItems": [
+            {
+                "id" : 1,
+                "title": "API Overview"
+            },
+            {
+                "id" : 2,
+                "title": "Endpoints"
+            },
+            {
+                "id" : 3,
+                "title": "API Customization"
+            }
+        ]
+      },
+      {
+        "id" : 6,
+        "title": "Examples",
+        "subItems": [
+            {
+                "id" : 1,
+                "title": "Basic Example"
+            },
+            {
+                "id" : 2,
+                "title": "Complex Example with Multiple Stats"
+            },
+            {
+                "id" : 3,
+                "title": "Real-life Project Example"
+            }
+        ]
+      },
+      {
+        "id" : 7,
+        "title": "Contributing",
+        "subItems": [
+            {
+                "id" : 1,
+                "title": "How to Contribute"
+            },
+            {
+                "id" : 2,
+                "title": "Coding Standards"
+            },
+            {
+                "id" : 3,
+                "title": "Pull Request Guidelines"
+            }
+        ]
+      },
+      {
+        "id" : 8,
+        "title": "FAQ",
+        "subItems": [
+            {
+                "id" : 1,
+                "title": "Supported Stats"
+            },
+            {
+                "id" : 2,
+                "title": "How Often Are Stats Updated?"
+            },
+            {
+                "id" : 3,
+                "title": "Can I Customize the API Response?"
+            }
+        ]
+      }
+    ]
+  }

@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/variable.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        @livewireStyles
     </head>
     <style>
         @font-face {
@@ -46,10 +47,16 @@
             padding: 0;
             overflow: hidden;
         }
+        .mn_wrpr {
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <body>
         <div class="mn_wrpr">
+            <livewire:docs.header />
             {{ $slot }}
         </div>
+        @livewireScripts
     </body>
 </html>
