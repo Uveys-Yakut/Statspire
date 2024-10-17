@@ -62,6 +62,7 @@ a.hdr-tool-itm[active] > span {
     cursor: pointer;
     background-color: #1c1e21db;
     user-select: none;
+    -webkit-user-select: none;
 }
 .toggle >
 .tggl-cycl {

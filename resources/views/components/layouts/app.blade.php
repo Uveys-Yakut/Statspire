@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Statspire</title>
+        @yield('head')
         <link rel="stylesheet" href="{{ asset('css/variable.css') }}">
         <link rel="stylesheet" href="{{ asset('css/docs/index.css') }}">
         <link rel="stylesheet" href="{{ asset('css/docs/menu.css') }}">

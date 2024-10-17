@@ -2,7 +2,7 @@
     use Illuminate\Support\Str;
 
     $menuDt = $data['menuData'];
-    $activeMenuSlung = $data['activeMenuSlung'];
+    $actItmUrlSlug = $data['actItmUrlSlug'];
 @endphp
 <div class="doc-sdbr_wrpr">
     <div class="sdbr_wrpr">
@@ -12,7 +12,8 @@
                     <li class="mnu_lst-itm_wrpr">
                         <div class="lst-itm lv1 collapsible"
                             @foreach ($menuItm->subItems as $subItm)
-                                @if (Str::slug($subItm->title) === $activeMenuSlung)
+                                @if (Str::slug($subItm->title) === $actItmUrlSlug)
+                                    act
                                     lnk-act
                                 @endif
                             @endforeach
@@ -22,14 +23,20 @@
                                 <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
                             </svg>
                         </div>
-                        <ul class="lst-itm cntnt_wrpr">
+                        <ul class="lst-itm cntnt_wrpr"
+                            @foreach ($menuItm->subItems as $subItm)
+                                @if (Str::slug($subItm->title) === $actItmUrlSlug)
+                                    style="height: auto !important;"
+                                @endif
+                            @endforeach
+                        >
                             @foreach ($menuItm->subItems as $subItm)
                                 <li class="mnu_lst-itm_wrpr">
                                     <a
                                         class="lst-itm lv2 collapsible"
-                                        wire:click.prevent="activeMnu('{{ Str::slug($subItm->title) }}')"
+                                        wire:click.prevent="activeMnuItm('{{ $menuItm->title }}', '{{ Str::slug($subItm->title) }}')"
                                         href="{{ Str::slug($subItm->title) }}"
-                                        @if (Str::slug($subItm->title) === $activeMenuSlung)
+                                        @if (Str::slug($subItm->title) === $actItmUrlSlug)
                                             lnk-act
                                         @endif
                                     >

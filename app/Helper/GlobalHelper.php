@@ -17,4 +17,10 @@ class GlobalHelper
         return $percentages;
     }
 
+    public static function reverseSlug($slug) {
+        $reversedSlug = str_replace('-', ' ', $slug);
+        $reversedSlug = ucwords($reversedSlug);
+
+        return $reversedSlug;
+    }
 }

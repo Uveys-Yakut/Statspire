@@ -7,16 +7,16 @@ use Livewire\Component;
 
 class Menu extends Component
 {
-    public $activeMenuSlung;
+    public $actItmUrlSlug;
 
-    public function mount($activeMenuSlung) {
-        $this->activeMenuSlung = $activeMenuSlung;
+    public function mount($actItmUrlSlug) {
+        $this->actItmUrlSlug = $actItmUrlSlug;
     }
 
-    public function activeMnu($currentSlug) {
-        $this->dispatch('showContent', $currentSlug);
+    public function activeMnuItm($parentMenuItmName, $newUrlSlug) {
+        $newUrlSlug = $parentMenuItmName.":::".$newUrlSlug;
+        $this->dispatch('showContent', $newUrlSlug);
         $this->skipRender();
-        // $this->dispatch('updatePageContent', $currentSlug);
     }
 
     public function render()
@@ -25,7 +25,7 @@ class Menu extends Component
 
         $data = [
             'menuData' => $docsMenuDt,
-            'activeMenuSlung' => $this->activeMenuSlung
+            'actItmUrlSlug' => $this->actItmUrlSlug
         ];
 
         return view('livewire.docs.menu', compact('data'));

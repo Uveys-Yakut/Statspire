@@ -3,25 +3,22 @@
 namespace App\Livewire\Docs;
 
 use Livewire\Component;
-use Livewire\Attributes\On;
 class Index extends Component
 {
-    public $slug;
-    public $currentSlug;
+    public $urlSlug;
 
-    public function mount($slug)
+    public function mount($urlSlug)
     {
-        $this->slug = $slug;
+        $this->urlSlug = $urlSlug;
     }
 
-    public function showContent($slug) {
-        $this->currentSlug = $slug;
-        $this->dispatch('showContent', $slug);
+    public function showContent($actUrlSlug) {
+        $this->dispatch('showContent', $actUrlSlug);
         $this->skipRender();
     }
 
     public function render()
     {
-        return view('livewire.docs.index', ['activeSlug' => $this->slug]);
+        return view('livewire.docs.index', ['urlSlug' => $this->urlSlug]);
     }
 }
