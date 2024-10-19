@@ -1,0 +1,38 @@
+# Örnek YAML Dosyası
+site:
+  title: "Örnek Site"
+  description: "Bu, örnek bir site için YAML yapılandırma dosyasıdır."
+  author:
+    name: "John Doe"
+    email: "john.doe@example.com"
+pages:
+  - title: "Ana Sayfa"
+    slug: "ana-sayfa"
+    content: |
+      # Hoş Geldiniz
+
+      Bu, ana sayfanın içeriğidir. Burada siteniz hakkında bilgi verebilirsiniz.
+
+      - Hızlı bağlantılar:
+        - [Hakkımızda](hakkimizda)
+        - [İletişim](iletisim)
+
+  - title: "Hakkımızda"
+    slug: "hakkimizda"
+    content: |
+      # Hakkımızda
+
+      Bu sayfa, şirketimiz hakkında bilgi içerir.
+
+      - Misyon: "Müşterilerimize en iyi hizmeti sunmak"
+      - Vizyon: "Sektörde lider olmak"
+
+  - title: "İletişim"
+    slug: "iletisim"
+    content: |
+      # İletişim
+
+      Bizimle iletişime geçmek için aşağıdaki bilgileri kullanabilirsiniz.
+
+      - Email: contact@example.com
+      - Telefon: "+90 123 456 7890"
