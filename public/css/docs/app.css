@@ -1,22 +1,22 @@
 @font-face {
     font-family: "SourceSansPro";
-    src: url('../fonts/SourceSansPro-Regular.ttf');
+    src: url('../../fonts/SourceSansPro-Regular.ttf');
 }
 @font-face {
     font-family: "KanitRegular";
-    src: url('../fonts/Kanit-Regular.ttf');
+    src: url('../../fonts/Kanit-Regular.ttf');
 }
 @font-face {
     font-family: "RubikRegular";
-    src: url('../fonts/Rubik-Regular.ttf');
+    src: url('../../fonts/Rubik-Regular.ttf');
 }
 @font-face {
     font-family: "RubikPixelsRegular";
-    src: url('../fonts/RubikPixels-Regular.ttf');
+    src: url('../../fonts/RubikPixels-Regular.ttf');
 }
 @font-face {
     font-family: "Grotes";
-    src: url('../fonts/GetVoIPGrotesque.ttf');
+    src: url('../../fonts/GetVoIPGrotesque.ttf');
 }
 * {
     box-sizing: border-box;
@@ -37,4 +37,6 @@ body {
 .mn_wrpr {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
 }

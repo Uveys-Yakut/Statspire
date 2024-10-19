@@ -1,24 +1,8 @@
-<style>
-    .docs-doc-page_wrpr {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        overflow-y: auto;
-    }
-    .doc-page_wrpr {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-    }
-</style>
 <div class='docs-doc-page_wrpr'>
-    <div class='doc-page_wrpr'>
-        @livewire('docs.menu', [ 'actItmUrlSlug' => $urlSlug ])
-        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-            @livewire('docs.page', ['actItmContentUrl' => $urlSlug])
-        </div>
-    </div>
+    @livewire('docs.menu', [ 'actItmUrlSlug' => $urlSlug ])
+    <main class='doc-page_wrpr'>
+        @livewire('docs.page', ['actItmContentUrl' => $urlSlug])
+    </main>
 </div>
 <script>
     function reverseSlug(slug) {
@@ -66,7 +50,6 @@
                 urlSlugCache[urlSlug] = content;
             }
         }
-        console.log(window.location.origin);
         Livewire.on('pageContent', (slug) => {
             const newTitle = document.querySelector('title');
             const newCanonical = document.querySelector('link[rel="canonical"]');

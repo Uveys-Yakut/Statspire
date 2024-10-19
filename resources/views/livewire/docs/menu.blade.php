@@ -4,7 +4,7 @@
     $menuDt = $data['menuData'];
     $actItmUrlSlug = $data['actItmUrlSlug'];
 @endphp
-<div class="doc-sdbr_wrpr">
+<aside class="doc-sdbr_wrpr">
     <div class="sdbr_wrpr">
         <nav class="menu">
             <ul class="mnu_lst_wrpr">
@@ -50,7 +50,7 @@
             </ul>
         </nav>
     </div>
-</div>
+</aside>
 <script>
     $(document).ready(() => {
         $(".lst-itm.lv1.collapsible").click(function() {
