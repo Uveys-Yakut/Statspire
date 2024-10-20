@@ -70,6 +70,11 @@
                 </pre>
                 <button type="button" aria-label="Copy code to clipboard" class="copyButton">Copy</button>
             </div>
+            <p>
+                <em>
+                    (Nunc eleifend quis auctor duis elementum hendrerit. Condimentum fringilla aenean vestibulum)
+                </em>
+            </p>
             <h3 id="turpis">
                 Turpis
                 <a class="hash-link" href="#turpis" title="Direct link to heading">&ZeroWidthSpace;</a>
@@ -80,6 +85,9 @@
                 </pre>
                 <button type="button" aria-label="Copy code to clipboard" class="copyButton">Copy</button>
             </div>
+            <p>
+                <code>duis platea</code> class condimentum dis
+            </p>
             <h3 id="litora">
                 Litora
                 <a class="hash-link" href="#litora" title="Direct link to heading">&ZeroWidthSpace;</a>
@@ -90,7 +98,23 @@
                 </pre>
                 <button type="button" aria-label="Copy code to clipboard" class="copyButton">Copy</button>
             </div>
-            <div style="padding-top: 10rem;"></div>
+            <p>
+                <code>interdum vulputate</code> imperdiet pellentesque
+            </p>
+            <nav class="pagination-nav_wrpr">
+                <div class="pgntn-itm_cntnr">
+                    <a class="pgntn-lnk" href="http://">
+                        <div class="pgntn-sublbl">Previous</div>
+                        <div class="pgntn-lbl">Lorem</div>
+                    </a>
+                </div>
+                <div class="pgntn-itm_cntnr">
+                    <a class="pgntn-lnk" href="http://">
+                        <div class="pgntn-sublbl">Next</div>
+                        <div class="pgntn-lbl">Ipsum</div>
+                    </a>
+                </div>
+            </nav>
         </div>
         <aside class="scrollspy_wrpr">
             <div class="table-of-content_wrpr thin-scrollbar">
@@ -150,6 +174,38 @@
             setTimeout(() => {
                 $button.text("Copy").prop('disabled', false);
             }, 2000);
+        });
+
+        const $headings = $("h2, h3, h4, h5, h6");
+        const $spyScrollItms = $('.tble-of-cntnt-itm__lnk');
+        const headerHeight = $('.hdr-mn_wrpr').height();
+
+        $('.mn_wrpr').on('scroll', function () {
+            let closestHeading = null;
+            let scrollPosition = $(this).scrollTop();
+
+            $headings.each(function () {
+                const $heading = $(this);
+                const headingHeight = $heading.outerHeight();
+                const headingTop = $heading.offset().top - ($('.mn_wrpr').offset().top + headerHeight);
+                const middleOfView = ($('.mn_wrpr').height() / 2) - headerHeight;
+
+                if (headingTop < middleOfView) {
+                    closestHeading = $heading
+                }
+            })
+            if (closestHeading) {
+                $spyScrollItms.each(function() {
+                    const $spyScrollItm = $(this);
+                    const closestHeadingID = closestHeading.attr('id')
+                    if ($spyScrollItm.attr('href') === `#${closestHeadingID}`) {
+                        if (!$spyScrollItm.hasClass('act')) {
+                            $spyScrollItms.removeClass('act');
+                            $spyScrollItm.addClass('act')
+                        }
+                    }
+                });
+            }
         });
     });
 </script>
