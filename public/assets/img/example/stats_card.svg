@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="215" viewBox="0 0 350 215">
+    <style>
+        :root {
+            --header-ttl-color: #FF9800;
+            --card-stroke-color: #e651007a;
+            --card-fill-color: #FFF3E0;
+            --text-color: #E65100;
+        }
+        .header {
+            font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: var(--header-ttl-color);
+        }
+        .lang-name {
+            font: 400 11px "Segoe UI", Ubuntu, Sans-Serif;
+            fill: var(--text-color);
+        }
+        .bar {
+            rx: 5;
+            ry: 5;
+        }
+        .stats-background {
+            stroke: var(--card-stroke-color);
+            fill: var(--card-fill-color);
+        }
+        .background-bar {
+            fill: var(--text-color);
+            rx: 5;
+            ry: 5;
+            opacity: 0.15;
+        }
+        @keyframes fadeInAnimation {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+        }
+        .stagger {
+            opacity: 0;
+            animation: fadeInAnimation 0.3s ease-in-out forwards;
+        }
+    </style>
+    <rect x="0.5" y="0.5" rx="4.5" class="stats-background" height="99%" width="349"/>
+
+    <text x="25" y="35" class="header" opacity="0">
+        Most Used Languages
+        <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="225ms"/>
+    </text>
+
+                            <g transform="translate(0, 0)">
+                <g transform="translate(25, 55)">
+
+                                                                    <g transform="translate(0, 0)">
+                            <g class="stagger" style="animation-delay: 450ms">
+                                <circle cx="5" cy="6" r="5" fill="#4F5D95"/>
+                                <text data-testid="lang-name" x="15" y="10" class="lang-name">
+                                    PHP 32.96%
+                                </text>
+                            </g>
+                        </g>
+                                                                                            <g transform="translate(0, 30)">
+                            <g class="stagger" style="animation-delay: 610ms">
+                                <circle cx="5" cy="6" r="5" fill="#f7523f"/>
+                                <text data-testid="lang-name" x="15" y="10" class="lang-name">
+                                    Blade 20.67%
+                                </text>
+                            </g>
+                        </g>
+                                                                                            <g transform="translate(0, 60)">
+                            <g class="stagger" style="animation-delay: 770ms">
+                                <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
+                                <text data-testid="lang-name" x="15" y="10" class="lang-name">
+                                    JavaScript 16.42%
+                                </text>
+                            </g>
+                        </g>
+                                                                                            <g transform="translate(0, 90)">
+                            <g class="stagger" style="animation-delay: 930ms">
+                                <circle cx="5" cy="6" r="5" fill="#3178c6"/>
+                                <text data-testid="lang-name" x="15" y="10" class="lang-name">
+                                    TypeScript 15.79%
+                                </text>
+                            </g>
+                        </g>
+                                                                                            <g transform="translate(0, 120)">
+                            <g class="stagger" style="animation-delay: 1090ms">
+                                <circle cx="5" cy="6" r="5" fill="#3572A5"/>
+                                <text data-testid="lang-name" x="15" y="10" class="lang-name">
+                                    Python 14.16%
+                                </text>
+                            </g>
+                        </g>
+                                                            </g>
+                <g transform="scale(1.6) translate(146, 56.5)">
+
+                                                                        <g class="stagger" style="animation-delay: 0ms">
+                                <path data-testid="lang-donut" d="M 4.095269530372 -15.252311481466 A 40 40 0 0 1 60.918544953282 23.551424859334 L 52.934835962625 23.041139887467 A 32 32 0 0 0 7.4762156242976 -8.0018491851728 Z" fill="#4F5D95" stroke="none">
+                                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="0ms"/>
+                                </path>
+                            </g>
+                                                                                                <g class="stagger" style="animation-delay: 100ms">
+                                <path data-testid="lang-donut" d="M 60.918544953282 23.551424859334 A 40 40 0 0 1 29.260051636723 60.137853121482 L 27.608041309378 52.310282497185 A 32 32 0 0 0 52.934835962625 23.041139887467 Z" fill="#f7523f" stroke="none">
+                                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="100ms"/>
+                                </path>
+                            </g>
+                                                                                                <g class="stagger" style="animation-delay: 200ms">
+                                <path data-testid="lang-donut" d="M 29.260051636723 60.137853121482 A 40 40 0 0 1 -8.3410066784422 48.186491629035 L -2.4728053427538 42.749193303228 A 32 32 0 0 0 27.608041309378 52.310282497185 Z" fill="#f1e05a" stroke="none">
+                                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="200ms"/>
+                                </path>
+                            </g>
+                                                                                                <g class="stagger" style="animation-delay: 300ms">
+                                <path data-testid="lang-donut" d="M -8.3410066784422 48.186491629035 A 40 40 0 0 1 -17.805038849236 11.295930755128 L -10.044031079389 13.236744604102 A 32 32 0 0 0 -2.4728053427538 42.749193303228 Z" fill="#3178c6" stroke="none">
+                                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="300ms"/>
+                                </path>
+                            </g>
+                                                                                                <g class="stagger" style="animation-delay: 400ms">
+                                <path data-testid="lang-donut" d="M -17.805038849236 11.295930755128 A 40 40 0 0 1 4.095269530372 -15.252311481466 L 7.4762156242976 -8.0018491851728 A 32 32 0 0 0 -10.044031079389 13.236744604102 Z" fill="#3572A5" stroke="none">
+                                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="400ms"/>
+                                </path>
+                            </g>
+                                                            </g>
+            </g>
+        </svg>

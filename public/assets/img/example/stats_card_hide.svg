@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="185" viewBox="0 0 450 185" fill="#000" role="img" aria-labelledby="descId">
+    <title id="titleId">Uveys-yakut's Github Stats, Rank: C</title>
+    <desc id="descId">Total Stars Earned: $total_stars, Total Commits in 2024 : $total_commits, Total PRs: $total_prs, Total Issues: $total_issues, Contributed to (last year): $contributions</desc>
+    <style>
+        :root {
+            --header-ttl-color: #FF9800;
+            --circle-color: #FFB74D;
+            --card-stroke-color: #e651007a;
+            --card-fill-color: #FFF3E0;
+            --text-color: #E65100;
+            --icon-color: #ff0000db;
+            --rank-text-color: #ef8f00e8;
+        }
+        .header {
+            font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: var(--header-ttl-color);
+            animation: fadeInAnimation 0.8s ease-in-out forwards;
+        }
+        @supports(-moz-appearance: auto) {
+            .header { font-size: 15.5px; }
+        }
+        .card-bg {
+            stroke: var(--card-stroke-color);
+            fill: var(--card-fill-color);
+        }
+        .stat {
+            font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+            fill: var(--text-color);
+        }
+        @supports(-moz-appearance: auto) {
+            .stat { font-size:12px; }
+        }
+        .stagger {
+            opacity: 0;
+            animation: fadeInAnimation 0.3s ease-in-out forwards;
+        }
+        .rank-text {
+            font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: var(--rank-text-color);
+            animation: scaleInAnimation 0.55s ease-in-out forwards;
+        }
+        .rank-percentile-header {
+            font-size: 14px;
+        }
+        .rank-percentile-text {
+            font-size: 16px;
+        }
+        .not_bold { font-weight: 400 }
+        .bold { font-weight: 700 }
+        .rank-circle-rim {
+            stroke: var(--circle-color);
+            fill: none;
+            stroke-width: 6;
+            opacity: 0.2;
+        }
+        .icon {
+            fill: var(--icon-color);
+        }
+        .rank-circle {
+            stroke: var(--circle-color);
+            stroke-dasharray: 250;
+            fill: none;
+            stroke-width: 6;
+            stroke-linecap: round;
+            opacity: 0.8;
+            transform-origin: -10px 8px;
+            transform: rotate(-90deg);
+            animation: rankAnimation 1s forwards ease-in-out;
+        }
+        @keyframes rankAnimation {
+            from {
+                stroke-dashoffset: 251.32741228718;
+            }
+            to {
+                stroke-dashoffset: 241.2743157957;
+            }
+        }
+        @keyframes scaleInAnimation {
+            from {
+                transform: translate(-6px, 6px) scale(0);
+            }
+            to {
+                transform: translate(-6px, 6px) scale(1);
+            }
+        }
+        @keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <rect class="card-bg" x="0.5" y="0.5" rx="4.5" height="calc(100% - 1px)" width="280" stroke-opacity="1"/>
+    <g data-testid="card-title" transform="translate(25, 35)">
+        <g transform="translate(0, 0)">
+                            <text x="0" y="0" class="header" data-testid="header">Uveys-yakut's Github Rank</text>
+                    </g>
+    </g>
+    <g data-testid="main-card-body" transform="translate(0, 55)">
+        <g data-testid="rank-circle" transform="translate(140, 45) , scale(1.15)">
+            <circle class="rank-circle-rim" cx="-10" cy="8" r="40"/>
+            <circle class="rank-circle" cx="-10" cy="8" r="40"/>
+            <g class="rank-text">
+                                    <text x="-5" y="1" class="stat bold" style="font-size: 24px; font-weight: 800;" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="level-rank-icon">C</text>
+                            </g>
+        </g>
+        <g x="0" y="0">
+                    </g>
+    </g>
+</svg>

@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="195" viewBox="0 0 450 195" fill="#000" role="img" aria-labelledby="descId">
+    <title id="titleId">Uveys-yakut's Github Stats, Rank: C</title>
+    <desc id="descId">Total Stars Earned: $total_stars, Total Commits in 2024 : $total_commits, Total PRs: $total_prs, Total Issues: $total_issues, Contributed to (last year): $contributions</desc>
+    <style>
+        :root {
+            --header-ttl-color: #FF9800;
+            --circle-color: #FFB74D;
+            --card-stroke-color: #e651007a;
+            --card-fill-color: #FFF3E0;
+            --text-color: #E65100;
+            --icon-color: #ff0000db;
+            --rank-text-color: #ef8f00e8;
+        }
+        .header {
+            font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: var(--header-ttl-color);
+            animation: fadeInAnimation 0.8s ease-in-out forwards;
+        }
+        @supports(-moz-appearance: auto) {
+            .header { font-size: 15.5px; }
+        }
+        .card-bg {
+            stroke: var(--card-stroke-color);
+            fill: var(--card-fill-color);
+        }
+        .stat {
+            font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+            fill: var(--text-color);
+        }
+        @supports(-moz-appearance: auto) {
+            .stat { font-size:12px; }
+        }
+        .stagger {
+            opacity: 0;
+            animation: fadeInAnimation 0.3s ease-in-out forwards;
+        }
+        .rank-text {
+            font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: var(--rank-text-color);
+            animation: scaleInAnimation 0.55s ease-in-out forwards;
+        }
+        .rank-percentile-header {
+            font-size: 14px;
+        }
+        .rank-percentile-text {
+            font-size: 16px;
+        }
+        .not_bold { font-weight: 400 }
+        .bold { font-weight: 700 }
+        .rank-circle-rim {
+            stroke: var(--circle-color);
+            fill: none;
+            stroke-width: 6;
+            opacity: 0.2;
+        }
+        .icon {
+            fill: var(--icon-color);
+        }
+        .rank-circle {
+            stroke: var(--circle-color);
+            stroke-dasharray: 250;
+            fill: none;
+            stroke-width: 6;
+            stroke-linecap: round;
+            opacity: 0.8;
+            transform-origin: -10px 8px;
+            transform: rotate(-90deg);
+            animation: rankAnimation 1s forwards ease-in-out;
+        }
+        @keyframes rankAnimation {
+            from {
+                stroke-dashoffset: 251.32741228718;
+            }
+            to {
+                stroke-dashoffset: 241.2743157957;
+            }
+        }
+        @keyframes scaleInAnimation {
+            from {
+                transform: translate(-6px, 6px) scale(0);
+            }
+            to {
+                transform: translate(-6px, 6px) scale(1);
+            }
+        }
+        @keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <rect class="card-bg" x="0.5" y="0.5" rx="4.5" height="calc(100% - 1px)" width="449" stroke-opacity="1"/>
+    <g data-testid="card-title" transform="translate(25, 35)">
+        <g transform="translate(0, 0)">
+                            <text x="0" y="0" class="header" data-testid="header">Uveys-yakut's Github Stats</text>
+                    </g>
+    </g>
+    <g data-testid="main-card-body" transform="translate(0, 55)">
+        <g data-testid="rank-circle" transform="translate(365, 50) ">
+            <circle class="rank-circle-rim" cx="-10" cy="8" r="40"/>
+            <circle class="rank-circle" cx="-10" cy="8" r="40"/>
+            <g class="rank-text">
+                                    <text x="-5" y="1" class="stat bold" style="font-size: 24px; font-weight: 800;" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="level-rank-icon">C</text>
+                            </g>
+        </g>
+        <g x="0" y="0">
+                            <g transform="translate(0, 0)">
+                    <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="15px" height="15px" viewBox="0 0 576 512"><path d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"/></svg>                        <text class="stat bold" x="25" y="12.5">Total Stars Earned:</text>
+                        <text class="stat bold" x="199.01" y="12.5" data-testid="stars">5</text>
+                    </g>
+                </g>
+                                            <g transform="translate(0, 25)">
+                    <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="15px" height="15px" viewBox="0 0 640 512"><path d="M320 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm156.8-48C462 361 397.4 416 320 416s-142-55-156.8-128L32 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l131.2 0C178 151 242.6 96 320 96s142 55 156.8 128L608 224c17.7 0 32 14.3 32 32s-14.3 32-32 32l-131.2 0z"/></svg>                        <text class="stat bold" x="25" y="12.5">Total Commits:</text>
+                        <text class="stat bold" x="199.01" y="12.5" data-testid="stars">87</text>
+                    </g>
+                </g>
+                                            <g transform="translate(0, 50)">
+                    <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="15" height="15" viewBox="0 0 512 512"><path d="M305.8 2.1C314.4 5.9 320 14.5 320 24l0 40 16 0c70.7 0 128 57.3 128 128l0 166.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3L400 192c0-35.3-28.7-64-64-64l-16 0 0 40c0 9.5-5.6 18.1-14.2 21.9s-18.8 2.3-25.8-4.1l-80-72c-5.1-4.6-7.9-11-7.9-17.8s2.9-13.3 7.9-17.8l80-72c7-6.3 17.2-7.9 25.8-4.1zM104 80A24 24 0 1 0 56 80a24 24 0 1 0 48 0zm8 73.3l0 205.3c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3l0-205.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80c0 32.8-19.7 61-48 73.3zM104 432a24 24 0 1 0 -48 0 24 24 0 1 0 48 0zm328 24a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg>                        <text class="stat bold" x="25" y="12.5">Total PRs:</text>
+                        <text class="stat bold" x="199.01" y="12.5" data-testid="stars">0</text>
+                    </g>
+                </g>
+                                            <g transform="translate(0, 75)">
+                    <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"/></svg>                        <text class="stat bold" x="25" y="12.5">Total Issues:</text>
+                        <text class="stat bold" x="199.01" y="12.5" data-testid="stars">1</text>
+                    </g>
+                </g>
+                                            <g transform="translate(0, 100)">
+                    <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>                        <text class="stat bold" x="25" y="12.5">Contributed to:</text>
+                        <text class="stat bold" x="199.01" y="12.5" data-testid="stars">7</text>
+                    </g>
+                </g>
+                                    </g>
+    </g>
+</svg>
