@@ -118,7 +118,7 @@ Statspire is a project designed to help you create statistics tables for top-lan
     - ### Stats-Card Examples
 
       Here are examples of `stats-card` with specified options:
-      ![Stats Card](/public/assets/img/stats_card.png)
+      ![Stats Card](/public/assets/img/example/stats_card.png)
       ![Stats Card Hide Chart](/public/assets/img/example/stats_card_hide.svg)
 
 ## 📸 Screenshots
